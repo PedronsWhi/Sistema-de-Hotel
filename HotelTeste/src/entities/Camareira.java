@@ -24,6 +24,7 @@ public class Camareira extends Thread {
             }
             
             quarto.setPosseChave(EnumPosseChave.HOTEL); // Devolve a chave do quarto após a limpeza
+            System.out.println("A Camareira terminou de limpar");
         }
     }
     
