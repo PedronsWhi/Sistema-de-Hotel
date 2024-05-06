@@ -15,16 +15,15 @@ public class Camareira extends Thread {
     private void limparQuarto(Quarto quarto) {
         if (quarto.getPosseChave().equals(EnumPosseChave.HOTEL)) { // Verifica se a camareira tem a chave do quarto
             quarto.setPosseChave(EnumPosseChave.CAMAREIRA); // Define que a camareira está com a chave do quarto
-            System.out.println("A Camareira está limpando o quarto"); // Mensagem indicando que a camareira está limpando o quarto
-            
+            System.out.println("Camareira " + Thread.currentThread().getName() + " está limpando o quarto " + quarto); // Imprime o número da camareira
             try {
                 Thread.sleep(5000); // Simula o tempo de limpeza do quarto
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            
             quarto.setPosseChave(EnumPosseChave.HOTEL); // Devolve a chave do quarto após a limpeza
-            System.out.println("A Camareira terminou de limpar");
+            quarto.setDisponibilidade(DisponibilidadeEnum.VAGO); // Define que o quarto está disponível para ocupação
+            System.out.println("O quarto " + quarto + " está disponível para ocupação."); // Mensagem indicando que o quarto está disponível para ocupação
         }
     }
     
