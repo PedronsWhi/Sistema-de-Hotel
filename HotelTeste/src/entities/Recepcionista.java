@@ -41,3 +41,4 @@ public class Recepcionista extends Thread {
         System.out.println("Todos os quartos estão ocupados. Aguardando disponibilidade.");
     }
 }
+
