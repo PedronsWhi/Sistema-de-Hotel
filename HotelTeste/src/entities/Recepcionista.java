@@ -1,4 +1,5 @@
 package entities;
+
 import java.util.concurrent.Semaphore;
 
 public class Recepcionista extends Thread {
