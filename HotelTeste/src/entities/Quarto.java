@@ -7,6 +7,16 @@ public class Quarto {
     private EnumPosseChave posseChave; // Quem possui a chave do quarto
     private ArrayList<Hospede> hospedes; // Lista de hóspedes no quarto
     
+    private int numero;
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
     // Construtor padrão do quarto
     public Quarto(){
         this.setDisponibilidade(DisponibilidadeEnum.VAGO); // Define o quarto como vago por padrão
@@ -53,4 +63,11 @@ public class Quarto {
     public int getQuantidade() {
         return this.getHospedes().size();
     }
+    
+    @Override
+    public String toString() {
+        return "" + numero;
+    }
+    
+    
 }
