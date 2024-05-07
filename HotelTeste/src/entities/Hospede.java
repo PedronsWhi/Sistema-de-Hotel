@@ -7,7 +7,6 @@ public class Hospede extends Thread {
     private Quarto quarto; 
     private Semaphore acessoQuartos;
     
-    
     // Construtores
 
     public Hospede(Quarto quarto, Semaphore acessoQuartos) {
@@ -23,7 +22,7 @@ public class Hospede extends Thread {
 
     public void saidaPasseio() {
         this.quarto.setPosseChave(EnumPosseChave.HOTEL);
-        System.out.println("Hóspede '" + Thread.currentThread().getName() + "' está passeando.");
+        System.out.println("Hóspede " + Thread.currentThread().getName() + " está passeando.");
         
         try {
             Thread.sleep(3000);
@@ -34,7 +33,7 @@ public class Hospede extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+    	while (true) {
             if (quarto != null) {
                 // Mostra o hóspede dentro do quarto
                 System.out.println("Hóspede " + Thread.currentThread().getName() + " se encontra no quarto: " + quarto);
